@@ -1,0 +1,11 @@
+# VSCode
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node / Build (αν στο μέλλον προσθέσεις)
+node_modules/
+dist/

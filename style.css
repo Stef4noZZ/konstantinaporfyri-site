@@ -1,0 +1,186 @@
+/* Γενικά */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #7B3FBF; /* μωβ */
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.header-container {
+    padding: 20px;
+}
+
+/* Logo */
+.logo {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d4b3ff;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+/* Headers */
+h1, h2, h3, h4 {
+    color: #7B3FBF;
+}
+
+h3 {
+    border-bottom: 2px solid #7B3FBF;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* About Section */
+#about {
+    text-align: center;
+}
+#about img {
+    max-width: 150px;
+    border-radius: 50%;
+    border: 4px solid #7B3FBF;
+    margin: 20px 0;
+}
+
+/* Education & Experience */
+#education h4,
+#experience h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #333;
+}
+#education p,
+#experience p {
+    margin: 5px 0 12px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Seminars */
+#seminars {
+    background: #f3e9fb;
+    padding: 15px;
+    border-radius: 8px;
+}
+#seminars h4 {
+    font-size: 1.05rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+#seminars p {
+    font-size: 0.9rem;
+    margin: 2px 0 8px 0;
+    line-height: 1.4;
+    color: #444;
+}
+.seminars-list {
+    list-style: none;
+    padding: 0;
+}
+.seminars-list li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 4px solid #7B3FBF;
+    background: #fdf4ff;
+    border-radius: 5px;
+}
+
+/* Contact */
+#contact {
+    padding: 20px;
+    background: #f3e9fb;
+    border-radius: 8px;
+}
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+#contact li {
+    margin: 10px 0;
+    font-size: 1.05rem;
+}
+#contact a {
+    color: #7B3FBF;
+    text-decoration: none;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #eee;
+    color: #333;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
+    #seminars, #contact {
+        padding: 10px;
+    }
+    .logo {
+        max-width: 140px;
+    }
+}

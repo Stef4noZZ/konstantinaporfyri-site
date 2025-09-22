@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Κωνσταντίνα Πορφύρη - Συμβουλευτική Ψυχολόγος</title>
+
+    <!-- SEO / Social Meta -->
+    <meta name="description" content="Κωνσταντίνα Πορφύρη - Συμβουλευτική Ψυχολόγος, Συνθετική Ψυχοθεραπεύτρια στην Αθήνα. Υποστήριξη, ενσυναίσθηση και κατανόηση.">
+    <meta property="og:title" content="Κωνσταντίνα Πορφύρη - Συμβουλευτική Ψυχολόγος">
+    <meta property="og:description" content="Συμβουλευτική Ψυχολόγος στην Αθήνα με ειδίκευση στη συνθετική ψυχοθεραπεία.">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/logo.png" alt="Λογότυπο Κωνσταντίνας Πορφύρη" class="logo">
+            <h1>Κωνσταντίνα Πορφύρη</h1>
+            <h2>Συμβουλευτική Ψυχολόγος – Συνθετική Ψυχοθεραπεύτρια</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Σχετικά με μένα</a></li>
+                <li><a href="#experience">Εργασιακό Ιστορικό</a></li>
+                <li><a href="#education">Εκπαίδευση</a></li>
+                <li><a href="#seminars">Σεμινάρια</a></li>
+                <li><a href="#contact">Επικοινωνία</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about"><p>Φόρτωση...</p></section>
+        <section id="experience"><p>Φόρτωση...</p></section>
+        <section id="education"><p>Φόρτωση...</p></section>
+        <section id="seminars"><p>Φόρτωση...</p></section>
+        <section id="contact"><p>Φόρτωση...</p></section>
+    </main>
+
+    <footer>
+        <p>© 2025 Κωνσταντίνα Πορφύρη</p>
+    </footer>
+
+    <!-- JS modular -->
+    <script>
+        const sections = [
+            {id: 'about', file: 'content/about.html'},
+            {id: 'experience', file: 'content/experience.html'},
+            {id: 'education', file: 'content/education.html'},
+            {id: 'seminars', file: 'content/seminars.html'},
+            {id: 'contact', file: 'content/contact.html'}
+        ];
+
+        sections.forEach(section => {
+            fetch(section.file)
+            .then(response => response.text())
+            .then(data => document.getElementById(section.id).innerHTML = data)
+            .catch(err => console.error(`Error loading ${section.file}: ${err}`));
+        });
+    </script>
+</body>
+</html>
