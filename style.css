@@ -10,43 +10,54 @@ body {
 
 /* Header */
 header {
-    background-color: #7B3FBF; /* μωβ */
+    background: linear-gradient(135deg, #7B3FBF, #a768e0); /* gradient */
     text-align: center;
-    padding: 20px 0;
+    padding: 30px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .header-container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: auto;
+    padding: 0 20px;
 }
 
 /* Logo */
 .logo {
-    max-width: 180px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     display: block;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 15px auto;
 }
 
 /* Header titles */
 header h1 {
     color: white;
-    font-size: 2rem;
+    font-size: 2.4rem;
     margin: 5px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 header h2 {
-    color: #e0d4f8; /* πιο ανοιχτό μωβ για contrast */
-    font-size: 1.2rem;
+    color: #e0d4f8;
+    font-size: 1.3rem;
     margin: 5px 0 15px 0;
 }
 
 /* Navigation */
+nav {
+    background-color: #6b2fa0;
+    border-top: 2px solid #8c4fd8;
+    border-bottom: 2px solid #8c4fd8;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 10px 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -57,36 +68,48 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    padding: 10px 8px;
+    display: inline-block;
+    transition: all 0.3s;
+    border-radius: 5px;
 }
 
 nav ul li a:hover {
-    color: #d4b3ff;
+    color: #7B3FBF;
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* Main content */
 main {
-    padding: 20px;
+    padding: 30px 20px;
     max-width: 900px;
     margin: auto;
 }
 
 section {
     margin-bottom: 50px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
 /* Section headers */
-h3 {
+h3, h4 {
     color: #7B3FBF;
+}
+
+h3 {
     border-bottom: 2px solid #7B3FBF;
     padding-bottom: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
 h4 {
-    color: #7B3FBF;
     margin-top: 15px;
     margin-bottom: 5px;
+    font-weight: bold;
 }
 
 /* About Section */
@@ -118,16 +141,14 @@ h4 {
 
 /* Seminars */
 #seminars {
-    background: #f3e9fb;
-    padding: 20px;
-    border-radius: 8px;
-    color: #333;
+    background: #fdf4ff;
+    padding: 25px;
+    border-radius: 10px;
 }
 #seminars h4 {
     font-size: 1.05rem;
     margin-top: 15px;
     margin-bottom: 5px;
-    font-weight: bold;
 }
 #seminars p {
     font-size: 0.9rem;
@@ -140,17 +161,17 @@ h4 {
 }
 .seminars-list li {
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 12px;
     border-left: 4px solid #7B3FBF;
-    background: #fdf4ff;
-    border-radius: 5px;
+    background: #f9e9ff;
+    border-radius: 8px;
 }
 
 /* Contact */
 #contact {
-    padding: 20px;
-    background: #f3e9fb;
-    border-radius: 8px;
+    padding: 25px;
+    background: #fdf4ff;
+    border-radius: 10px;
 }
 #contact ul {
     list-style: none;
@@ -171,23 +192,45 @@ h4 {
 /* Footer */
 footer {
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     background-color: #eee;
     color: #333;
+    border-top: 1px solid #ccc;
+    font-size: 0.95rem;
 }
 
 /* Responsive */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
+    .logo {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        max-width: 220px;
+    }
+    nav ul li {
+        margin: 5px 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
     nav ul {
         flex-direction: column;
+        padding: 0;
     }
     nav ul li {
         margin: 5px 0;
     }
-    .logo {
-        max-width: 140px;
+    main {
+        padding: 15px 10px;
     }
-    #seminars, #contact {
-        padding: 10px;
+    section {
+        padding: 15px;
     }
 }
