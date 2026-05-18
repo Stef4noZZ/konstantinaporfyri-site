@@ -234,3 +234,101 @@ footer {
         padding: 15px;
     }
 }
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 10px;
+    background: black;
+    color: white;
+    padding: 10px;
+    z-index: 9999;
+}
+
+.skip-link:focus {
+    left: 10px;
+}
+
+/* Accessibility button */
+#accessibility-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Accessibility menu */
+#accessibility-menu {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#accessibility-menu.show {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#accessibility-menu button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: #7B3FBF;
+    color: white;
+    border-radius: 5px;
+}
+
+/* High contrast mode */
+.high-contrast {
+    background: black !important;
+    color: yellow !important;
+}
+
+.high-contrast section,
+.high-contrast header,
+.high-contrast footer,
+.high-contrast nav {
+    background: black !important;
+    color: yellow !important;
+}
+
+.high-contrast a {
+    color: cyan !important;
+}
+
+/* Underline links */
+.underline-links a {
+    text-decoration: underline !important;
+}
+
+/* Keyboard accessibility */
+a:focus,
+button:focus {
+    outline: 3px solid #ffcc00;
+    outline-offset: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

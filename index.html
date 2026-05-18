@@ -15,6 +15,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Μετάβαση στο περιεχόμενο</a>
+
+    <button id="accessibility-toggle" aria-label="Μενού Προσβασιμότητας">
+        ♿
+    </button>
+
+    <div id="accessibility-menu">
+        <button onclick="changeFontSize(1)">Α+</button>
+        <button onclick="changeFontSize(-1)">Α-</button>
+        <button onclick="toggleContrast()">High Contrast</button>
+        <button onclick="toggleUnderline()">Underline Links</button>
+    </div>
     <header>
         <div class="header-container">
             <img src="images/logo.png" alt="Λογότυπο Κωνσταντίνας Πορφύρη" class="logo">
@@ -32,7 +44,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section id="about"><p>Φόρτωση...</p></section>
         <section id="experience"><p>Φόρτωση...</p></section>
         <section id="education"><p>Φόρτωση...</p></section>
@@ -60,6 +72,29 @@
             .then(data => document.getElementById(section.id).innerHTML = data)
             .catch(err => console.error(`Error loading ${section.file}: ${err}`));
         });
+    </script>
+    <script>
+        const accessibilityMenu = document.getElementById("accessibility-menu");
+
+        document.getElementById("accessibility-toggle")
+        .addEventListener("click", () => {
+            accessibilityMenu.classList.toggle("show");
+        });
+
+        let currentFontSize = 100;
+
+        function changeFontSize(change) {
+            currentFontSize += change * 10;
+            document.body.style.fontSize = currentFontSize + "%";
+        }
+
+        function toggleContrast() {
+            document.body.classList.toggle("high-contrast");
+        }
+
+        function toggleUnderline() {
+            document.body.classList.toggle("underline-links");
+        }
     </script>
 </body>
 </html>
