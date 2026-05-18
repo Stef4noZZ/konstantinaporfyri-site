@@ -79,6 +79,11 @@ nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
+.high-contrast nav ul li a:hover {
+    color: black !important;
+    background: yellow !important;
+}
+
 /* Main content */
 main {
     padding: 30px 20px;
@@ -296,21 +301,57 @@ footer {
 }
 
 /* High contrast mode */
-.high-contrast {
-    background: black !important;
-    color: yellow !important;
-}
-
+.high-contrast,
+.high-contrast body,
+.high-contrast main,
 .high-contrast section,
 .high-contrast header,
 .high-contrast footer,
-.high-contrast nav {
+.high-contrast nav,
+.high-contrast div,
+.high-contrast ul,
+.high-contrast li,
+.high-contrast p,
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4 {
+    background: black !important;
+    background-image: none !important;
+    color: yellow !important;
+    border-color: yellow !important;
+    box-shadow: none !important;
+}
+
+/* About + seminars specific */
+.high-contrast #about,
+.high-contrast #seminars,
+.high-contrast #contact {
     background: black !important;
     color: yellow !important;
 }
 
+/* Navigation */
+.high-contrast nav ul li a {
+    color: cyan !important;
+    background: transparent !important;
+}
+
+/* Links */
 .high-contrast a {
     color: cyan !important;
+}
+
+/* Buttons */
+.high-contrast button {
+    background: yellow !important;
+    color: black !important;
+    border: 2px solid white !important;
+}
+
+/* Images */
+.high-contrast img {
+    filter: grayscale(100%) contrast(120%);
 }
 
 /* Underline links */
