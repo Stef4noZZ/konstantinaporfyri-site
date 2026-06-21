@@ -3,97 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Κωνσταντίνα Πορφύρη - Συμβουλευτική Ψυχολόγος</title>
+    <title>Κωνσταντίνα Πορφύρη — Συμβουλευτική Ψυχολόγος & Ψυχοθεραπεύτρια στην Αθήνα</title>
 
     <!-- SEO / Social Meta -->
-    <meta name="description" content="Κωνσταντίνα Πορφύρη - Συμβουλευτική Ψυχολόγος, Συνθετική Ψυχοθεραπεύτρια στην Αθήνα. Υποστήριξη, ενσυναίσθηση και κατανόηση.">
-    <meta property="og:title" content="Κωνσταντίνα Πορφύρη - Συμβουλευτική Ψυχολόγος">
-    <meta property="og:description" content="Συμβουλευτική Ψυχολόγος στην Αθήνα με ειδίκευση στη συνθετική ψυχοθεραπεία.">
+    <meta name="description" content="Κωνσταντίνα Πορφύρη — Συμβουλευτική Ψυχολόγος & Συνθετική Ψυχοθεραπεύτρια στον Γέρακα Αττικής. Ένας ασφαλής χώρος υποστήριξης, ενσυναίσθησης και προσωπικής εξέλιξης.">
+    <meta name="author" content="Κωνσταντίνα Πορφύρη">
+    <meta name="theme-color" content="#8a2168">
+    <link rel="canonical" href="https://konstantinaporfyri.gr/">
+
+    <meta property="og:title" content="Κωνσταντίνα Πορφύρη — Συμβουλευτική Ψυχολόγος">
+    <meta property="og:description" content="Συμβουλευτική Ψυχολόγος & Συνθετική Ψυχοθεραπεύτρια στην Αθήνα. Υποστήριξη, ενσυναίσθηση και κατανόηση.">
     <meta property="og:image" content="images/logo.png">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="el_GR">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured data for richer search results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Psychologist",
+      "name": "Κωνσταντίνα Πορφύρη",
+      "description": "Συμβουλευτική Ψυχολόγος & Συνθετική Ψυχοθεραπεύτρια",
+      "image": "https://konstantinaporfyri.gr/images/profile.jpg",
+      "url": "https://konstantinaporfyri.gr/",
+      "telephone": "+306974148747",
+      "email": "maritina_porfyris@hotmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Μυλτιάδου 47",
+        "addressLocality": "Γέρακας",
+        "addressRegion": "Αττική",
+        "addressCountry": "GR"
+      },
+      "knowsLanguage": ["el", "en"]
+    }
+    </script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Μετάβαση στο περιεχόμενο</a>
 
-    <button id="accessibility-toggle" aria-label="Μενού Προσβασιμότητας">
-        ♿
+    <!-- Accessibility controls -->
+    <button id="accessibility-toggle" aria-label="Μενού προσβασιμότητας" aria-expanded="false" aria-controls="accessibility-menu">
+        <span aria-hidden="true">♿</span>
     </button>
 
-    <div id="accessibility-menu">
-        <button onclick="changeFontSize(1)">Α+</button>
-        <button onclick="changeFontSize(-1)">Α-</button>
-        <button onclick="toggleContrast()">High Contrast</button>
-        <button onclick="toggleUnderline()">Underline Links</button>
+    <div id="accessibility-menu" role="group" aria-label="Ρυθμίσεις προσβασιμότητας">
+        <button type="button" onclick="changeFontSize(1)">Μεγαλύτερα γράμματα (Α+)</button>
+        <button type="button" onclick="changeFontSize(-1)">Μικρότερα γράμματα (Α−)</button>
+        <button type="button" id="contrast-btn" aria-pressed="false" onclick="toggleContrast()">Υψηλή αντίθεση</button>
+        <button type="button" id="underline-btn" aria-pressed="false" onclick="toggleUnderline()">Υπογράμμιση συνδέσμων</button>
+        <button type="button" onclick="resetAccessibility()">Επαναφορά</button>
     </div>
-    <header>
-        <div class="header-container">
-            <img src="images/logo.png" alt="Λογότυπο Κωνσταντίνας Πορφύρη" class="logo">
-            <h1>Κωνσταντίνα Πορφύρη</h1>
-            <h2>Συμβουλευτική Ψυχολόγος – Συνθετική Ψυχοθεραπεύτρια</h2>
+
+    <header class="site-header">
+        <div class="header-bar">
+            <a class="brand" href="#hero" aria-label="Αρχική — Κωνσταντίνα Πορφύρη">
+                <span class="brand-name">Κωνσταντίνα Πορφύρη</span>
+            </a>
+
+            <button id="nav-toggle" class="nav-toggle" aria-label="Άνοιγμα μενού πλοήγησης" aria-expanded="false" aria-controls="primary-nav">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+
+            <nav id="primary-nav" class="primary-nav" aria-label="Κύρια πλοήγηση">
+                <ul>
+                    <li><a href="#about">Σχετικά</a></li>
+                    <li><a href="#experience">Εμπειρία</a></li>
+                    <li><a href="#education">Εκπαίδευση</a></li>
+                    <li><a href="#seminars">Σεμινάρια</a></li>
+                    <li><a class="nav-cta" href="#contact">Επικοινωνία</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#about">Σχετικά με μένα</a></li>
-                <li><a href="#experience">Εργασιακό Ιστορικό</a></li>
-                <li><a href="#education">Εκπαίδευση</a></li>
-                <li><a href="#seminars">Σεμινάρια</a></li>
-                <li><a href="#contact">Επικοινωνία</a></li>
-            </ul>
-        </nav>
     </header>
 
+    <!-- Hero -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero-overlay"></div>
+        <div class="hero-inner">
+            <p class="hero-eyebrow">Συμβουλευτική Ψυχολόγος · Συνθετική Ψυχοθεραπεύτρια</p>
+            <h1 id="hero-title">Κωνσταντίνα Πορφύρη</h1>
+            <span class="hero-divider" aria-hidden="true"></span>
+            <p class="hero-lede">
+                Ένας ασφαλής, ζεστός χώρος όπου μπορείτε να εκφραστείτε ελεύθερα,
+                να κατανοήσετε τον εαυτό σας και να ανακαλύψετε νέους δρόμους εξέλιξης.
+            </p>
+            <a class="btn-primary" href="#contact">Κλείστε ραντεβού</a>
+        </div>
+    </section>
+
     <main id="main-content">
-        <section id="about"><p>Φόρτωση...</p></section>
-        <section id="experience"><p>Φόρτωση...</p></section>
-        <section id="education"><p>Φόρτωση...</p></section>
-        <section id="seminars"><p>Φόρτωση...</p></section>
-        <section id="contact"><p>Φόρτωση...</p></section>
+
+        <!-- About -->
+        <section id="about" class="section section-about" aria-labelledby="about-title">
+            <div class="section-inner about-grid">
+                <div class="about-media">
+                    <img src="images/profile.jpg" alt="Πορτρέτο της Κωνσταντίνας Πορφύρη" class="profile-photo">
+                </div>
+                <div class="about-text">
+                    <p class="eyebrow">Σχετικά με μένα</p>
+                    <h2 id="about-title">Η ψυχολογία ως διάλογος με την ανθρώπινη ψυχή</h2>
+                    <p>
+                        Πιστεύω βαθιά στη δύναμη της κατανόησης, της ενσυναίσθησης και της
+                        υποστήριξης για τη δημιουργία ενός ασφαλούς χώρου, όπου κάθε άνθρωπος
+                        μπορεί να εκφραστεί ελεύθερα και να ανακαλύψει τον αληθινό του εαυτό.
+                    </p>
+                    <p>
+                        Η επαγγελματική μου πορεία αντλεί έμπνευση από την επιθυμία να συμβάλλω
+                        ουσιαστικά στη βελτίωση της ποιότητας ζωής, βοηθώντας τους ανθρώπους
+                        να ξεπεράσουν προκλήσεις, να αναπτύξουν νέες δεξιότητες και να
+                        χτίσουν σταθερά θεμέλια αυτοπεποίθησης και προσωπικής εξέλιξης.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy quote band -->
+        <section class="quote-band" aria-label="Φιλοσοφία">
+            <div class="quote-overlay"></div>
+            <blockquote class="quote-inner">
+                <p>«Η θεραπεία ξεκινά τη στιγμή που νιώθεις πραγματικά ότι σε ακούν.»</p>
+            </blockquote>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section" aria-labelledby="experience-title">
+            <div class="section-inner">
+                <p class="eyebrow">Διαδρομή</p>
+                <h2 id="experience-title">Εργασιακό ιστορικό</h2>
+
+                <ol class="timeline">
+                    <li class="timeline-item">
+                        <span class="timeline-date">Απρίλιος 2023 — Παρόν</span>
+                        <h3>Συμβουλευτική Ψυχολόγος — Ψυχοθεραπεύτρια <span class="tag">Εθελοντισμός</span></h3>
+                        <p class="org">Δήμος Παλλήνης, Τμήμα Κοινωνικής Πολιτικής — Παλλήνη, Αθήνα</p>
+                        <p>
+                            Βραχύχρονη ψυχολογική υποστήριξη σε κατοίκους του Δήμου Παλλήνης, με
+                            στόχο την αντιμετώπιση θεμάτων όπως άγχος, κατάθλιψη, θυμός, διαταραχές
+                            συμπεριφοράς, δυσκολίες στις διαπροσωπικές και οικογενειακές σχέσεις,
+                            καθώς και ψυχοσωματικά προβλήματα.
+                        </p>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-date">Ιούνιος 2021 — Ιούνιος 2022</span>
+                        <h3>Συμβουλευτική Ψυχολόγος — Ψυχοθεραπεύτρια <span class="tag">Εθελοντισμός</span></h3>
+                        <p class="org">ΕΠΑΨΥ / Κέντρο Ημέρας «Franco Basaglia» — Μαρούσι, Αθήνα</p>
+                        <p>
+                            Βραχεία ψυχοθεραπεία σε ευρύ διαγνωστικό φάσμα: συναισθηματικές
+                            διαταραχές, διαταραχές προσωπικότητας, ψυχωτικές διαταραχές, καθώς και
+                            νευρωσικές και σωματόμορφες διαταραχές.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education" class="section section-alt" aria-labelledby="education-title">
+            <div class="section-inner">
+                <p class="eyebrow">Σπουδές</p>
+                <h2 id="education-title">Εκπαίδευση</h2>
+
+                <ol class="timeline">
+                    <li class="timeline-item">
+                        <span class="timeline-date">Οκτώβριος 2019 — Ιούλιος 2022</span>
+                        <h3>MA — Counselling &amp; Psychotherapy / Integrative Approach</h3>
+                        <p class="org">University of East London, UK</p>
+                        <p>
+                            Μεταπτυχιακό στη Συμβουλευτική και Ψυχοθεραπεία (Συνθετική Προσέγγιση —
+                            Egan’s Model · Προσωποκεντρική · Ψυχοδυναμική · Γνωσιακή–Συμπεριφορική).
+                        </p>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-date">Σεπτέμβριος 2013 — Ιούλιος 2019</span>
+                        <h3>BA — Psychology</h3>
+                        <p class="org">American College of Greece — Deree, Αγία Παρασκευή, Αθήνα</p>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-date">Σεπτέμβριος 2013 — Ιούλιος 2019</span>
+                        <h3>BA (Honours) — Psychology</h3>
+                        <p class="org">The Open University, UK</p>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-date">Σεπτέμβριος 2005 — Μάιος 2008</span>
+                        <h3>BDS — Bachelor of Dental Surgery</h3>
+                        <p class="org">University of Newcastle upon Tyne, UK</p>
+                    </li>
+                    <li class="timeline-item">
+                        <span class="timeline-date">Σεπτέμβριος 2000 — Ιούνιος 2003</span>
+                        <h3>Απόφοιτος Αγγλόφωνου Γενικού Λυκείου</h3>
+                        <p class="org">The British International School — Byron College, Γέρακας, Αθήνα</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Seminars -->
+        <section id="seminars" class="section" aria-labelledby="seminars-title">
+            <div class="section-inner">
+                <p class="eyebrow">Συνεχής εκπαίδευση</p>
+                <h2 id="seminars-title">Σεμινάρια &amp; ημερίδες</h2>
+
+                <ul class="seminars-grid">
+                    <li class="seminar-card">
+                        <span class="seminar-date">Μάρτιος 2025</span>
+                        <h3>Διπολική Διαταραχή: Η Ματιά του Ειδικού και η Βιωμένη Εμπειρία</h3>
+                        <p class="seminar-org">World Association for Psychosocial Rehabilitation (WAPR) — Ελληνικός Κλάδος</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Δεκέμβριος 2024</span>
+                        <h3>Νευροδιαφορικές Παθήσεις σε Ενήλικες</h3>
+                        <p class="seminar-org">Maximilian Theodoridis, MSc — City Unity College, Αθήνα</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Ιούλιος 2024</span>
+                        <h3>Ψυχοκοινωνική Προσέγγιση στον Καρκίνο του Πνεύμονα</h3>
+                        <p class="seminar-org">Fairlife — Φροντίδα &amp; Πρόληψη για τον Καρκίνο του Πνεύμονα</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Απρίλιος 2024</span>
+                        <h3>Burnout: Symptoms, Solutions &amp; Prevention</h3>
+                        <p class="seminar-org">The Open University of Cyprus (Webinar)</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Ιανουάριος 2024</span>
+                        <h3>Κατάχρηση Ουσιών</h3>
+                        <p class="seminar-org">Δρ. Σωτήριος Δεδελούδης — City Unity College, Αθήνα</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Νοέμβριος 2023</span>
+                        <h3>Understanding Anxiety, Depression &amp; Cognitive Behavioral Therapy</h3>
+                        <p class="seminar-org">University of Reading</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Απρίλιος 2023</span>
+                        <h3>Ψυχομετρικά Εργαλεία &amp; Αξιολόγηση</h3>
+                        <p class="seminar-org">Γ’ Ψυχιατρική Κλινική ΑΠΘ (Webinar)</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Απρίλιος 2023</span>
+                        <h3>Παγκόσμια Ημέρα Γνωσιακής Συμπεριφορικής Ψυχοθεραπείας</h3>
+                        <p class="seminar-org">Ελληνική Εταιρία Γνωσιακής Συμπεριφορικής Ψυχοθεραπείας</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Ιανουάριος 2023</span>
+                        <h3>Anxiety in Children &amp; Young People during Covid-19</h3>
+                        <p class="seminar-org">University of East Anglia</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Ιανουάριος 2023</span>
+                        <h3>Post-Traumatic Stress Disorder (PTSD) in the Global Context</h3>
+                        <p class="seminar-org">The University of Glasgow</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Δεκέμβριος 2022</span>
+                        <h3>Understanding Suicide &amp; Suicide Prevention Strategies</h3>
+                        <p class="seminar-org">The University of Glasgow</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Νοέμβριος 2022</span>
+                        <h3>Introduction to Behavioral Activation for Depression</h3>
+                        <p class="seminar-org">University of York</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Νοέμβριος 2022</span>
+                        <h3>Suicide Prevention</h3>
+                        <p class="seminar-org">Wesleyan University</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Νοέμβριος 2022</span>
+                        <h3>Integrating Care: Depression, Anxiety &amp; Physical Illness</h3>
+                        <p class="seminar-org">King’s College London</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Οκτώβριος 2022</span>
+                        <h3>CBT with Older People</h3>
+                        <p class="seminar-org">University of East Anglia</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Σεπτέμβριος 2022</span>
+                        <h3>Caring for People with Psychosis &amp; Schizophrenia</h3>
+                        <p class="seminar-org">King’s College London</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Σεπτέμβριος 2022</span>
+                        <h3>Ψυχοκοινωνική Στήριξη Προσφύγων &amp; Μεταναστών</h3>
+                        <p class="seminar-org">Α’ Ψυχιατρική Κλινική ΕΚΠΑ — Αιγινήτειο</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Αύγουστος 2022</span>
+                        <h3>Άγχος, Κρίσεις Πανικού &amp; Γνωσιακή Συμπεριφορική Θεραπεία</h3>
+                        <p class="seminar-org">Δρ. Δέσποινα Μέντη — City Unity College, Αθήνα</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Μάρτιος 2022</span>
+                        <h3>Θεραπευτικές Προσεγγίσεις της Άνοιας</h3>
+                        <p class="seminar-org">Άκτιος — Κέντρο Αποθεραπείας &amp; Αποκατάστασης</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Φεβρουάριος 2022</span>
+                        <h3>Positive Psychology</h3>
+                        <p class="seminar-org">The Graduate School, University of North Carolina at Chapel Hill</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Ιανουάριος 2022</span>
+                        <h3>Επιμέλεια Παιδιού</h3>
+                        <p class="seminar-org">Ελληνική Εταιρία Αναλυτικής Ομαδικής &amp; Οικογενειακής Ψυχοθεραπείας</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Δεκέμβριος 2021</span>
+                        <h3>Οι Κρίσεις ως Ευκαιρία Επανασχεδιασμού της Ζωής μας</h3>
+                        <p class="seminar-org">Ελληνικό Ανοιχτό Λαϊκό Πανεπιστήμιο, Αθήνα</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Ιούνιος 2021</span>
+                        <h3>Η Επιστήμη των Σχέσεων</h3>
+                        <p class="seminar-org">Ελληνικό Ανοιχτό Λαϊκό Πανεπιστήμιο, Αθήνα</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Φεβρουάριος 2021</span>
+                        <h3>Κατάθλιψη &amp; Επαγγελματική Εξουθένωση Επαγγελματιών Υγείας (Covid-19)</h3>
+                        <p class="seminar-org">Α’ Ψυχιατρική Κλινική ΕΚΠΑ, Αθήνα</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Νοέμβριος 2020</span>
+                        <h3>7ο Ψυχοφαρμακολογικό Συνέδριο</h3>
+                        <p class="seminar-org">Ελληνική Ψυχιατρική Εταιρία — Κλάδος Κλινικής Ψυχοφαρμακολογίας</p>
+                    </li>
+                    <li class="seminar-card">
+                        <span class="seminar-date">Οκτώβριος 2020</span>
+                        <h3>Ψυχικές &amp; Ηθικές Διαστάσεις της Πανδημίας</h3>
+                        <p class="seminar-org">Hellenic American Psychiatric Association Inc.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section section-contact" aria-labelledby="contact-title">
+            <div class="contact-overlay"></div>
+            <div class="section-inner contact-inner">
+                <p class="eyebrow eyebrow-light">Επικοινωνία</p>
+                <h2 id="contact-title">Ας μιλήσουμε</h2>
+                <p class="contact-lede">
+                    Μη διστάσετε να επικοινωνήσετε για πληροφορίες ή για να κλείσετε ραντεβού.
+                </p>
+
+                <ul class="contact-list">
+                    <li>
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:maritina_porfyris@hotmail.com">maritina_porfyris@hotmail.com</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">Τηλέφωνο</span>
+                        <a href="tel:+306974148747">+30 697 414 8747</a>
+                    </li>
+                    <li>
+                        <span class="contact-label">Διεύθυνση</span>
+                        <a href="https://maps.google.com/?q=Μυλτιάδου+47+Γέρακας+Αττικής" target="_blank" rel="noopener">Μυλτιάδου 47, Γέρακας Αττικής</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>© 2025 Κωνσταντίνα Πορφύρη</p>
+    <footer class="site-footer">
+        <p>© <span id="year">2026</span> Κωνσταντίνα Πορφύρη · Συμβουλευτική Ψυχολόγος</p>
     </footer>
 
-    <!-- JS modular -->
     <script>
-        const sections = [
-            {id: 'about', file: 'content/about.html'},
-            {id: 'experience', file: 'content/experience.html'},
-            {id: 'education', file: 'content/education.html'},
-            {id: 'seminars', file: 'content/seminars.html'},
-            {id: 'contact', file: 'content/contact.html'}
-        ];
+        // ---- Current year ----
+        document.getElementById("year").textContent = new Date().getFullYear();
 
-        sections.forEach(section => {
-            fetch(section.file)
-            .then(response => response.text())
-            .then(data => document.getElementById(section.id).innerHTML = data)
-            .catch(err => console.error(`Error loading ${section.file}: ${err}`));
+        // ---- Mobile navigation ----
+        const navToggle = document.getElementById("nav-toggle");
+        const primaryNav = document.getElementById("primary-nav");
+
+        navToggle.addEventListener("click", () => {
+            const open = primaryNav.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", String(open));
+            navToggle.setAttribute("aria-label", open ? "Κλείσιμο μενού πλοήγησης" : "Άνοιγμα μενού πλοήγησης");
         });
-    </script>
-    <script>
+
+        // Close the mobile menu after choosing a link
+        primaryNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                primaryNav.classList.remove("open");
+                navToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        // ---- Accessibility menu ----
+        const accessibilityToggle = document.getElementById("accessibility-toggle");
         const accessibilityMenu = document.getElementById("accessibility-menu");
+        const contrastBtn = document.getElementById("contrast-btn");
+        const underlineBtn = document.getElementById("underline-btn");
 
-        document.getElementById("accessibility-toggle")
-        .addEventListener("click", () => {
-            accessibilityMenu.classList.toggle("show");
+        accessibilityToggle.addEventListener("click", () => {
+            const open = accessibilityMenu.classList.toggle("show");
+            accessibilityToggle.setAttribute("aria-expanded", String(open));
         });
 
-        let currentFontSize = 100;
+        const MIN_FONT = 90, MAX_FONT = 150;
+        let currentFontSize = parseInt(localStorage.getItem("a11y-font"), 10) || 100;
 
-        function changeFontSize(change) {
-            currentFontSize += change * 10;
-            document.body.style.fontSize = currentFontSize + "%";
+        function applyFontSize() {
+            document.documentElement.style.fontSize = currentFontSize + "%";
+        }
+
+        function changeFontSize(step) {
+            currentFontSize = Math.min(MAX_FONT, Math.max(MIN_FONT, currentFontSize + step * 10));
+            applyFontSize();
+            localStorage.setItem("a11y-font", currentFontSize);
         }
 
         function toggleContrast() {
-            document.body.classList.toggle("high-contrast");
+            const on = document.body.classList.toggle("high-contrast");
+            contrastBtn.setAttribute("aria-pressed", String(on));
+            localStorage.setItem("a11y-contrast", on ? "1" : "0");
         }
 
         function toggleUnderline() {
-            document.body.classList.toggle("underline-links");
+            const on = document.body.classList.toggle("underline-links");
+            underlineBtn.setAttribute("aria-pressed", String(on));
+            localStorage.setItem("a11y-underline", on ? "1" : "0");
+        }
+
+        function resetAccessibility() {
+            currentFontSize = 100;
+            applyFontSize();
+            document.body.classList.remove("high-contrast", "underline-links");
+            contrastBtn.setAttribute("aria-pressed", "false");
+            underlineBtn.setAttribute("aria-pressed", "false");
+            localStorage.removeItem("a11y-font");
+            localStorage.removeItem("a11y-contrast");
+            localStorage.removeItem("a11y-underline");
+        }
+
+        // Restore saved accessibility preferences
+        (function restorePrefs() {
+            applyFontSize();
+            if (localStorage.getItem("a11y-contrast") === "1") {
+                document.body.classList.add("high-contrast");
+                contrastBtn.setAttribute("aria-pressed", "true");
+            }
+            if (localStorage.getItem("a11y-underline") === "1") {
+                document.body.classList.add("underline-links");
+                underlineBtn.setAttribute("aria-pressed", "true");
+            }
+        })();
+
+        // ---- Scroll reveal (respects reduced-motion) ----
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!prefersReducedMotion && "IntersectionObserver" in window) {
+            const revealables = document.querySelectorAll(".section, .quote-band");
+            revealables.forEach(el => el.classList.add("reveal"));
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealables.forEach(el => observer.observe(el));
         }
     </script>
 </body>
