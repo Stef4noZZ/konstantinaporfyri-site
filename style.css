@@ -85,7 +85,8 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
     gap: 1rem;
 }
 
-.brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; }
+.brand-logo { height: 42px; width: auto; }
 .brand-name {
     font-family: var(--font-serif);
     font-size: 1.25rem;
@@ -172,20 +173,20 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
                 rgba(253, 247, 251, 0) 78%);
 }
 
+.hero h1 {
+    font-size: clamp(2.6rem, 7vw, 4.2rem);
+    margin: 0 0 0.5rem;
+    color: var(--magenta-900);
+    text-shadow: 0 2px 14px rgba(255, 255, 255, 0.6);
+}
 .hero-eyebrow {
     font-size: clamp(0.8rem, 2vw, 1rem);
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--magenta-800);
-    margin: 0 0 0.6rem;
+    margin: 0;
     text-shadow: 0 1px 8px rgba(255, 255, 255, 0.85);
-}
-.hero h1 {
-    font-size: clamp(2.6rem, 7vw, 4.2rem);
-    margin: 0.1rem 0 0;
-    color: var(--magenta-900);
-    text-shadow: 0 2px 14px rgba(255, 255, 255, 0.6);
 }
 .hero-divider {
     display: block;
@@ -482,7 +483,8 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
 }
 
 @media (max-width: 480px) {
-    .brand-name { font-size: 1.05rem; }
+    .brand-logo { height: 32px; }
+    .brand-name { font-size: 0.98rem; }
     .seminars-grid { grid-template-columns: 1fr; }
 }
 
