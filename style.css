@@ -255,7 +255,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
     inset: auto -20px -20px auto;
     width: 110px;
     height: 110px;
-    background: url("images/flowers3.jpg") center / cover no-repeat;
+    background: url("images/flowers2.jpg") center / cover no-repeat;
     border-radius: 50%;
     border: 6px solid var(--white);
     box-shadow: var(--shadow-md);
