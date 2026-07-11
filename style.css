@@ -250,17 +250,16 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
     border: 6px solid var(--white);
 }
 .about-media::after {
-    /* soft floral accent behind the portrait */
     content: "";
     position: absolute;
-    inset: -22px -22px auto auto;
-    width: 120px;
-    height: 120px;
+    inset: auto -20px -20px auto;
+    width: 110px;
+    height: 110px;
     background: url("images/flowers3.jpg") center / cover no-repeat;
     border-radius: 50%;
-    opacity: 0.35;
-    z-index: -1;
-    filter: saturate(1.1);
+    border: 6px solid var(--white);
+    box-shadow: var(--shadow-md);
+    z-index: 1;
 }
 .about-text h2 { margin-top: 0; }
 
@@ -271,6 +270,8 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
     background: url("images/therapy4.jpg") center / cover no-repeat fixed;
     text-align: center;
 }
+.quote-band-alt { background-image: url("images/therapy2.jpg"); }
+.quote-band-growth { background-image: url("images/flowers1.jpg"); }
 .quote-overlay {
     position: absolute;
     inset: 0;
@@ -291,6 +292,16 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
     color: var(--white);
     margin: 0;
     text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.quote-cite {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rose-300);
 }
 
 /* ---------- Timeline (experience / education) ---------- */
@@ -355,43 +366,83 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
     vertical-align: middle;
 }
 
-/* ---------- Seminars ---------- */
-.seminars-grid {
+/* ---------- CV ---------- */
+.cv-text p { color: var(--ink); }
+
+/* ---------- Space ---------- */
+.space-text p { color: var(--ink); }
+.cv-seminars { margin-top: 2.5rem; }
+.cv-seminars h3 { font-size: 1.3rem; margin: 0 0 1rem; }
+
+.seminars-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.1rem;
+    border-top: 1px solid var(--blush-200);
 }
-.seminar-card {
-    background: var(--white);
-    border-radius: var(--radius-sm);
-    padding: 1.25rem 1.3rem;
-    box-shadow: var(--shadow-sm);
-    border-left: 4px solid var(--rose-400);
-    transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
-}
-.seminar-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-    border-left-color: var(--magenta-600);
+.seminar-date,
+.seminar-title,
+.seminar-org { display: inline; }
+.seminars-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.9rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--blush-200);
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 .seminar-date {
-    display: block;
+    flex: 0 0 auto;
+    min-width: 7.5rem;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--magenta-600);
-    margin-bottom: 0.4rem;
 }
-.seminar-card h3 {
-    font-size: 1.1rem;
-    margin: 0 0 0.4rem;
-    line-height: 1.25;
+.seminar-title { flex: 1 1 260px; color: var(--ink); }
+.seminar-org { flex: 0 1 auto; color: var(--ink-soft); font-size: 0.85rem; }
+
+/* ---------- Services ---------- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: clamp(2rem, 5vw, 3.5rem);
 }
-.seminar-org { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
+.service-block h3 { margin-top: 0; }
+.service-block p { color: var(--ink); }
+.service-block h4 {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--magenta-600);
+    margin: 1.5rem 0 0.9rem;
+}
+.tag-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tag-list .tag { font-size: 0.78rem; padding: 0.3rem 0.75rem; }
+
+.services-online {
+    margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    padding: 1.5rem 1.75rem;
+    background: var(--white);
+    border-left: 4px solid var(--rose-400);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+.services-online h4 {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--magenta-600);
+    margin: 0 0 0.6rem;
+}
+.services-online p { margin: 0; color: var(--ink); }
 
 /* ---------- Contact ---------- */
 .section-contact {
@@ -485,7 +536,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
 @media (max-width: 480px) {
     .brand-logo { height: 32px; }
     .brand-name { font-size: 0.98rem; }
-    .seminars-grid { grid-template-columns: 1fr; }
+    .seminars-list li { flex-direction: column; gap: 0.15rem; }
 }
 
 /* ==========================================================================
@@ -577,8 +628,9 @@ button:focus-visible {
 .high-contrast .section-about,
 .high-contrast .quote-band,
 .high-contrast .section-contact,
-.high-contrast .seminar-card,
+.high-contrast .seminars-list li,
 .high-contrast .timeline-item,
+.high-contrast .services-online,
 .high-contrast .contact-list li,
 .high-contrast .site-footer,
 .high-contrast #accessibility-menu {
@@ -621,13 +673,15 @@ button:focus-visible {
 
 .high-contrast button { background: #ff0 !important; color: #000 !important; border: 2px solid #fff !important; }
 
-.high-contrast .quote-inner p { color: #ff0 !important; }
+.high-contrast .quote-inner p,
+.high-contrast .quote-cite { color: #ff0 !important; }
 
 .high-contrast img { filter: grayscale(100%) contrast(115%); }
 
 .high-contrast .timeline::before { background: #ff0 !important; }
 .high-contrast .timeline-item::before { background: #ff0 !important; box-shadow: 0 0 0 2px #000 !important; }
-.high-contrast .seminar-card { border-left-color: #ff0 !important; }
+.high-contrast .seminars-list { border-top-color: #ff0 !important; }
+.high-contrast .tag { background: #000 !important; color: #ff0 !important; border: 1px solid #ff0 !important; }
 
 /* ==========================================================================
    Reduced motion
