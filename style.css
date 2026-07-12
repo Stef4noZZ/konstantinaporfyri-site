@@ -196,11 +196,22 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
     border-radius: 999px;
     background: linear-gradient(90deg, var(--rose-400), var(--magenta-600));
 }
-.hero-lede {
+.hero-quote {
     max-width: 38rem;
     margin: 0 auto 1.8rem;
+    text-align: left;
+    border-left: 4px solid var(--magenta-700);
+    padding-left: 1rem;
+}
+.hero-quote p {
+    margin: 0;
     color: var(--ink);
     font-size: 1.05rem;
+    line-height: 1.8;
+}
+.hero-quote em {
+    font-style: italic;
+    color: var(--magenta-900);
 }
 
 .btn-primary {
@@ -681,7 +692,14 @@ button:focus-visible {
 .high-contrast .contact-label,
 .high-contrast .contact-lede,
 .high-contrast .hero-tagline,
-.high-contrast .hero-lede { color: #ff0 !important; text-shadow: none !important; }
+.high-contrast .hero-lede,
+.high-contrast .hero-quote,
+.high-contrast .hero-quote p,
+.high-contrast .hero-quote em { color: #ff0 !important; text-shadow: none !important; }
+
+.high-contrast .hero-divider { background: #ff0 !important; }
+
+.high-contrast .hero-quote { border-color: #ff0 !important; }
 
 .high-contrast a,
 .high-contrast .primary-nav a,
