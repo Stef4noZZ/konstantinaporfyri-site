@@ -536,7 +536,26 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
 @media (max-width: 480px) {
     .brand-logo { height: 32px; }
     .brand-name { font-size: 0.98rem; }
-    .seminars-list li { flex-direction: column; gap: 0.15rem; }
+    .seminars-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+    }
+    .seminar-date,
+    .seminar-title,
+    .seminar-org {
+        display: block;
+        width: 100%;
+    }
+    .seminar-date { min-width: auto; }
+    .seminar-title { flex: 1 1 auto; }
+    .seminar-org { flex: 0 1 auto; }
+
+    .reveal {
+        transform: translateY(14px);
+        transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+        will-change: opacity, transform;
+    }
 }
 
 /* ==========================================================================
