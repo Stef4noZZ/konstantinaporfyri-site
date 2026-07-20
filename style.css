@@ -453,7 +453,11 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.15
     color: var(--magenta-600);
     margin: 0 0 0.6rem;
 }
-.services-online p { margin: 0; color: var(--ink); }
+.services-online p { margin: 0 0 0.75rem; color: var(--ink); }
+.services-online p:last-child { margin-bottom: 0; }
+.online-list { margin: 0 0 0.75rem; padding-left: 1.25rem; }
+.online-list li { margin: 0.35rem 0; color: var(--ink); }
+.online-list li::marker { color: var(--rose-400); }
 
 /* ---------- Contact ---------- */
 .section-contact {
